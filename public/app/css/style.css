@@ -1,0 +1,137 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+}
+
+label{
+  font-weight: normal;
+}
+
+.btn{
+  font-size: 12px;
+  padding: 15px 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+}
+
+.btn-default{
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.header{
+  padding: 40px;
+  background: #4a99e2;
+  background: linear-gradient(45deg,#54c1f4 0%,#28a7db 50%,#4a99e2 100%);
+  color: #fff;
+}
+
+/* HOME */
+.home-header{
+  padding: 60px;
+}
+
+.home-header .btn{
+  margin-top: 40px;
+}
+
+.home-filters{
+  border-bottom: 1px solid #ccc;
+}
+
+.home-filters .filter-label h4{
+  margin: 40px 0;
+}
+
+.home-filters .filter-list ul{
+  margin: 40px 0 !important;
+}
+
+.latest-jobs{
+  float: left;
+  width: 100%;
+  margin: 40px 0;
+  text-align: center;
+}
+
+/* FILTERS */
+.filters .filter-list ul{
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aside-filters{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.aside-filters .filter-list .item{
+  width: 100%;
+  display: table;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.aside-filters .filter-list .item:last-child{
+  border-bottom: none;
+}
+
+/* JOBS */
+
+.jobs{
+  padding-bottom: 40px;
+}
+
+.jobs-label{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.jobs-label h3{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.jobs-list ul {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.jobs-list li{
+  padding: 20px 0;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.jobs-list li:first-child{
+  border-top: 1px solid #ddd;
+}
+
+.jobs-list img{
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 3px;
+}
+
+.jobs-list .info h4{
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.jobs-list .place h4{
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
