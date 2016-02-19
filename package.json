@@ -1,0 +1,28 @@
+{
+  "name": "curso-mean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaell-lycan/curso-mean.git"
+  },
+  "keywords": [],
+  "author": "William B. <wbrunom@gmail.com> (http://wbruno.com.br)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaell-lycan/curso-mean/issues"
+  },
+  "homepage": "https://github.com/rafaell-lycan/curso-mean",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "config": "^1.19.0",
+    "debug": "^2.2.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.4"
+  }
+}
