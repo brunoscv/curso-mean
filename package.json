@@ -19,10 +19,18 @@
   },
   "homepage": "https://github.com/rafaell-lycan/curso-mean",
   "dependencies": {
+    "angular": "^1.4.9",
+    "angular-ui-router": "^0.2.18",
     "bluebird": "^3.3.1",
     "config": "^1.19.0",
     "debug": "^2.2.0",
     "express": "^4.13.4",
     "mongoose": "^4.4.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-uglify": "^1.5.2"
   }
 }
