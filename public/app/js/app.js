@@ -1,1 +1,6 @@
-console.log('aeee');
+(function  () {
+  angular.module('jobs',[
+    'ui.router',
+    'ngResource'
+  ]);
+})();

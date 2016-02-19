@@ -1,0 +1,109 @@
+<header class="header home-header text-center">
+  <div class="container">
+    <h1 class="text-center"><a href="index.html">Job Finder</a></h1>
+    <h2 class="text-center">Slogan goes here!</h2>
+    <a href="#" class="btn btn-default">Post a job!</a>
+  </div>
+</header>
+
+<section class="filters home-filters">
+  <div class="container">
+    <div class="col-sm-3 filter-label">
+      <h4>Estou procurando:</h4>
+    </div>
+    <div class="col-sm-9 filter-list">
+      <ul>
+        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Emprego</label></li>
+        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Estágio</label></li>
+        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Freela</label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{{ vm.jobs | json }}
+
+<section class="latest-jobs">
+  <div class="container">
+    <div class="col-sm-12 jobs-label">
+      <h3>Latest Jobs</h3>
+    </div>
+    <div class="jobs-list">
+     <ul>
+        <li class="col-xs-12 item">
+          <div class="col-sm-1 col-xs-3">
+            <img src="http://placehold.it/100" alt="company name">
+          </div>
+          <div class="col-sm-8 col-xs-9 info">
+            <h4>Job name</h4>
+            Company name
+          </div>
+          <div class="col-sm-2 col-xs-9 place">
+            <h4>Emprego</h4>
+            <span class="glyphicon glyphicon-globe"></span> São Paulo
+          </div>
+          <div class="col-sm-1 col-xs-3 date text-center">
+            NOV <br>
+            3
+          </div>
+       </li>
+        <li class="col-xs-12 item">
+          <div class="col-sm-1 col-xs-3">
+            <img src="http://placehold.it/100" alt="company name">
+          </div>
+          <div class="col-sm-8 col-xs-9 info">
+            <h4>Job name</h4>
+            Company name
+          </div>
+          <div class="col-sm-2 col-xs-9 place">
+            <h4>Emprego</h4>
+            <span class="glyphicon glyphicon-globe"></span> Campinas
+          </div>
+          <div class="col-sm-1 col-xs-3 date text-center">
+            NOV <br>
+            3
+          </div>
+       </li>
+        <li class="col-xs-12 item">
+          <div class="col-sm-1 col-xs-3">
+            <img src="http://placehold.it/100" alt="company name">
+          </div>
+          <div class="col-sm-8 col-xs-9 info">
+            <h4>Job name</h4>
+            Company name
+          </div>
+          <div class="col-sm-2 col-xs-9 place">
+            <h4>Emprego</h4>
+            <span class="glyphicon glyphicon-globe"></span> Remoto
+          </div>
+          <div class="col-sm-1 col-xs-3 date text-center">
+            NOV <br>
+            3
+          </div>
+       </li>
+        <li class="col-xs-12 item">
+          <div class="col-sm-1 col-xs-3">
+            <img src="http://placehold.it/100" alt="company name">
+          </div>
+          <div class="col-sm-8 col-xs-9 info">
+            <h4>Job name</h4>
+            Company name
+          </div>
+          <div class="col-sm-2 col-xs-9 place">
+            <h4>Emprego</h4>
+            <span class="glyphicon glyphicon-globe"></span> Rio de Janeiro
+          </div>
+          <div class="col-sm-1 col-xs-3 date text-center">
+            NOV <br>
+            3
+          </div>
+       </li>
+      </ul>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <a href="vagas.html" class="btn btn-primary">Load more</a>
+
+  </div>
+</section>
