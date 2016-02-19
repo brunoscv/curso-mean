@@ -1,0 +1,9 @@
+[
+  { "name": "Globo.com", "website": "http://globo.com" },
+  { "name": "Walmart.com", "website": "http://walmart.com.br" },
+  { "name": "Oi", "website": "http://oi.com.br" },
+  { "name": "BLZ", "website": "http://belezanaweb.com.br" },
+  { "name": "Novatec", "website": "http://www.novatec.com.br" },
+  { "name": "Oracle", "website": "http://www.oracle.com" },
+  { "name": "IBM", "website": "http://www.ibm.com" }
+]

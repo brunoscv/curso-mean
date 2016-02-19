@@ -1,6 +1,10 @@
 'use strict';
 
 let JobModel = Promise.promisifyAll(require('../models/JobModel'));
+let debug = require('debug')('curso-mean:controller:job');
+
+const PAGE_SIZE = 5;
+const FIRST_PAGE = 1;
 
 let JobController = {
   byId: function(request, response, next) {
@@ -20,9 +24,28 @@ let JobController = {
   },
 
   list: function(request, response, next) {
-    JobModel.find()
+    let size = parseInt(request.query.size, 10) || PAGE_SIZE;
+    let page = parseInt(request.query.page, 10) || FIRST_PAGE;
+    let result = {
+      _metadata: {}
+    };
+
+    JobModel.count()
+      .then(function(total) {
+        result._metadata.total = total;
+
+        return JobModel
+          .find()
+          .limit(size)
+          .skip((page - 1) * size)
+      })
       .then(function(data) {
-        response.json(data);
+        result._metadata.size = size;
+        result._metadata.page = page;
+        result._metadata.count = data.length;
+        result.items = data;
+
+        response.json(result);
       })
       .catch(next);
   },

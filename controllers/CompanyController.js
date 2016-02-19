@@ -3,6 +3,8 @@
 let CompanyModel = Promise.promisifyAll(require('../models/CompanyModel'));
 let debug = require('debug')('curso-mean:controller:company');
 
+const PAGE_SIZE = 5;
+const FIRST_PAGE = 1;
 
 let CompanyController = {
   byId: function(request, response, next) {
@@ -22,9 +24,28 @@ let CompanyController = {
   },
 
   list: function(request, response, next) {
-    CompanyModel.find()
+    let size = request.query.size || PAGE_SIZE;
+    let page = request.query.page || FIRST_PAGE;
+    let result = {
+      _metadata: {}
+    };
+
+    CompanyModel.count()
+      .then(function(total) {
+        result._metadata.total = total;
+
+        return CompanyModel
+          .find()
+          .limit(size)
+          .skip((page - 1) * size)
+      })
       .then(function(data) {
-        response.json(data);
+        result._metadata.size = size;
+        result._metadata.page = page;
+        result._metadata.count = data.length;
+        result.items = data;
+
+        response.json(result);
       })
       .catch(next);
   },

@@ -6,7 +6,7 @@ let JobSchema = mongoose.Schema({
   "description": String,
   "remote": Boolean,
   "location": String,
-  "createdAt": Date,
+  "createdAt": { type: Date, default: new Date() },
   "_companyId": { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
   "tags": [String],
   "type": String
