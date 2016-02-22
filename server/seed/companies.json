@@ -1,7 +1,7 @@
-{"_id":{"$oid":"56c69654c4f57f6e16605c39"},"name":"Globo.com","website":"http://globo.com"}
-{"_id":{"$oid":"56c69654c4f57f6e16605c3a"},"name":"Walmart.com","website":"http://walmart.com.br"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c39"},"name":"Globo.com","website":"http://globo.com", "companyLogo" : "http://s.glbimg.com/en/ho/static/globocom2012/img/fb_marca.png"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c3a"},"name":"Walmart.com","website":"http://walmart.com.br", "companyLogo" : "http://static.wmobjects.com.br/arquivos/walmart-facebook.jpg"}
 {"_id":{"$oid":"56c69654c4f57f6e16605c3b"},"name":"Oi","website":"http://oi.com.br"}
-{"_id":{"$oid":"56c69654c4f57f6e16605c3c"},"name":"BLZ","website":"http://belezanaweb.com.br"}
-{"_id":{"$oid":"56c69654c4f57f6e16605c3d"},"name":"Novatec","website":"http://www.novatec.com.br"}
-{"_id":{"$oid":"56c69654c4f57f6e16605c3e"},"name":"Oracle","website":"http://www.oracle.com"}
-{"_id":{"$oid":"56c69654c4f57f6e16605c3f"},"name":"IBM","website":"http://www.ibm.com"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c3c"},"name":"BLZ","website":"http://belezanaweb.com.br", "companyLogo": "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAbRAAAAJDQyZjA2ZTNlLWMyMWEtNDlhYy05OTM2LTdlMzYxMWVlYTU0ZQ.png"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c3d"},"name":"Novatec","website":"http://www.novatec.com.br", "companyLogo" : "https://pbs.twimg.com/profile_images/458961077972123648/i5UzTEx7.jpeg"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c3e"},"name":"Oracle","website":"http://www.oracle.com", "companyLogo" : "http://cdn.cruxialcio.com/sites/cruxialcio.com/files/styles/article_large_slide/public/2014/07/17/cn-image-oraclelogo.png?itok=JvNzv6ve"}
+{"_id":{"$oid":"56c69654c4f57f6e16605c3f"},"name":"IBM","website":"http://www.ibm.com", "companyLogo" : "https://pbs.twimg.com/profile_images/614802024832610304/_CZY2puL_400x400.jpg"}
