@@ -49,7 +49,7 @@ let JobController = {
       filters.tags = { $in: query.tags.split(',') };
     }
 
-    JobModel.count()
+    JobModel.count(filters)
       .then(function(total) {
         result._metadata.total = total;
 
