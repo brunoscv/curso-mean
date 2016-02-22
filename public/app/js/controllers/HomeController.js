@@ -59,9 +59,7 @@
       vm.jobs = [];
     }
 
-    function changeTag (e, tag) {
-      e.preventDefault();
-
+    function changeTag (tag) {
       var i = vm.tags.indexOf(tag);
 
       if (~i) {

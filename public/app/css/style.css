@@ -10,7 +10,9 @@ label{
 .default-list{
   display: inline-block;
   padding: 0;
+  margin: 0;
   list-style: none;
+  float: none;
 }
 
 .btn{
@@ -88,6 +90,15 @@ label{
   border-bottom: none;
 }
 
+.tag-filters {
+  margin-top: 40px;
+}
+
+.tag-filters .active-filters {
+  background: #eee;
+  padding: 10px;
+}
+
 /* JOBS */
 
 .jobs{
@@ -155,24 +166,6 @@ label{
   display: block;
 }
 
-.jobs-list .tag-list .tag {
-  display: inline-block;
-  padding: 5px;
-  margin: 3px;
-  color: #0F1B38;
-  text-transform: uppercase;
-  border: 2px solid #0F1B38;
-  border-radius: 0.2em;
-  font-weight: 600;
-}
-
-.jobs-list .tag-list a {
-  color: inherit;
-  line-height: 1;
-  font-size: 0.7em;
-  text-decoration: none;
-}
-
 .jobs-list .info h4{
   font-family: 'Roboto Slab', serif;
   font-size: 14px;
@@ -183,4 +176,36 @@ label{
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+/* TAG LIST */
+.tag-list .tag {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.tag-list a {
+  padding: 5px;
+  margin: 3px;
+  font-size: 0.75em;
+  text-decoration: none;
+  color: #0F1B38;
+  border: 2px solid #0F1B38;
+  border-radius: 0.2em;
+}
+
+.tag-list .tag a:hover {
+  background-color: #0F1B38;
+  color: #fff;
+}
+
+.tag-filters .tag a {
+  background-color: #0F1B38;
+  color: #fff;
+}
+
+.tag-filters .tag a:hover{
+  color: #0F1B38;
+  background-color: transparent;
 }
