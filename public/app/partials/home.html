@@ -21,78 +21,43 @@
   </div>
 </section>
 
-{{ vm.jobs | json }}
-
 <section class="latest-jobs">
   <div class="container">
     <div class="col-sm-12 jobs-label">
       <h3>Latest Jobs</h3>
     </div>
+
+<!--     <pre>
+       {{ vm.jobs | json }}
+    </pre> -->
+
     <div class="jobs-list">
      <ul>
-        <li class="col-xs-12 item">
-          <div class="col-sm-1 col-xs-3">
-            <img src="http://placehold.it/100" alt="company name">
+        <li class="col-xs-12 item" ng-repeat="job in vm.jobs track by job._id">
+
+          <div class="col-sm-1 hidden-xs logo">
+            <img src="http://placehold.it/100" alt="{{job.name}}" ng-if="job.company.companyLogo">
+            <p ng-if="!job.company.companyLogo">T</p>
           </div>
-          <div class="col-sm-8 col-xs-9 info">
-            <h4>Job name</h4>
-            Company name
+
+          <div class="col-sm-4 col-xs-8 info">
+            <h4>{{job.name}}</h4>
+            {{job.company.name || 'Company Name'}}
           </div>
+
+          <div class="col-sm-4 tags">
+            <ul class="default-list tag-list">
+              <li class="tag" ng-repeat="tag in job.tags">
+                <a href="#">{{tag}}</a>
+              </li>
+            </ul>
+          </div>
+
           <div class="col-sm-2 col-xs-9 place">
             <h4>Emprego</h4>
-            <span class="glyphicon glyphicon-globe"></span> São Paulo
+            <span class="glyphicon glyphicon-globe"></span> {{job.location}}
           </div>
-          <div class="col-sm-1 col-xs-3 date text-center">
-            NOV <br>
-            3
-          </div>
-       </li>
-        <li class="col-xs-12 item">
-          <div class="col-sm-1 col-xs-3">
-            <img src="http://placehold.it/100" alt="company name">
-          </div>
-          <div class="col-sm-8 col-xs-9 info">
-            <h4>Job name</h4>
-            Company name
-          </div>
-          <div class="col-sm-2 col-xs-9 place">
-            <h4>Emprego</h4>
-            <span class="glyphicon glyphicon-globe"></span> Campinas
-          </div>
-          <div class="col-sm-1 col-xs-3 date text-center">
-            NOV <br>
-            3
-          </div>
-       </li>
-        <li class="col-xs-12 item">
-          <div class="col-sm-1 col-xs-3">
-            <img src="http://placehold.it/100" alt="company name">
-          </div>
-          <div class="col-sm-8 col-xs-9 info">
-            <h4>Job name</h4>
-            Company name
-          </div>
-          <div class="col-sm-2 col-xs-9 place">
-            <h4>Emprego</h4>
-            <span class="glyphicon glyphicon-globe"></span> Remoto
-          </div>
-          <div class="col-sm-1 col-xs-3 date text-center">
-            NOV <br>
-            3
-          </div>
-       </li>
-        <li class="col-xs-12 item">
-          <div class="col-sm-1 col-xs-3">
-            <img src="http://placehold.it/100" alt="company name">
-          </div>
-          <div class="col-sm-8 col-xs-9 info">
-            <h4>Job name</h4>
-            Company name
-          </div>
-          <div class="col-sm-2 col-xs-9 place">
-            <h4>Emprego</h4>
-            <span class="glyphicon glyphicon-globe"></span> Rio de Janeiro
-          </div>
+
           <div class="col-sm-1 col-xs-3 date text-center">
             NOV <br>
             3

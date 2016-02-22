@@ -7,6 +7,11 @@ label{
   font-weight: normal;
 }
 
+.default-list{
+  padding: 0;
+  list-style: none;
+}
+
 .btn{
   font-size: 12px;
   padding: 15px 25px;
@@ -99,7 +104,7 @@ label{
   text-transform: uppercase;
 }
 
-.jobs-list ul {
+.jobs-list > ul {
   float: left;
   width: 100%;
   margin-bottom: 20px;
@@ -107,21 +112,61 @@ label{
   list-style: none;
 }
 
-.jobs-list li{
+.jobs-list > ul > li{
   padding: 20px 0;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-.jobs-list li:first-child{
+.jobs-list > ul > li:first-child{
   border-top: 1px solid #ddd;
 }
 
-.jobs-list img{
-  width: 60px;
-  height: 60px;
-  display: block;
+.jobs-list .logo {
+  width: 3.5em;
+  height: 3.5em;
+  padding: 0;
+  margin: 0.5em 0;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
   border-radius: 3px;
+}
+
+.jobs-list .logo p {
+  color: #dad6d2;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.jobs-list .logo img{
+  width: 100%;
+  display: block;
+}
+
+.jobs-list .tag-list .tag {
+  border: 2px solid #0F1B38;
+  border-radius: 0.2em;
+  display: table;
+  padding: 0.33em;
+  margin: 0.2em;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align: middle;
+  color: #0F1B38;
+}
+
+.jobs-list .tag-list a {
+  color: inherit;
+  line-height: 1;
+  font-size: 0.7em;
+  font-weight: 700;
 }
 
 .jobs-list .info h4{
