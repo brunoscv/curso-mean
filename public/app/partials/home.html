@@ -45,19 +45,16 @@
       <h3>Latest Jobs</h3>
     </div>
 
-<!--     <pre>
-       {{ vm.jobs | json }}
-    </pre> -->
-
     <div class="jobs-list">
      <ul>
         <li
         class="col-xs-12 item"
-        ng-repeat="job in vm.jobs track by job._id">
+        ng-repeat="job in vm.jobs track by job._id"
+        ng-click="vm.viewJobDetail(job._id)">
 
           <div class="col-sm-1 hidden-xs logo">
-            <img src="http://placehold.it/100" alt="{{job.name}}" ng-if="job._company.companyLogo">
-            <p ng-if="!job._company.companyLogo">T</p>
+            <img ng-src="{{job._company.companyLogo}}" alt="{{job.name}}" ng-if="job._company.companyLogo">
+            <p ng-if="!job._company.companyLogo">O</p>
           </div>
 
           <div class="col-sm-4 col-xs-7 info">

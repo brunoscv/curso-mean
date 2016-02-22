@@ -2,9 +2,9 @@
   angular.module('jobs')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['JobService'];
+  HomeController.$inject = ['JobService', '$state'];
 
-  function HomeController (JobService) {
+  function HomeController (JobService, $state) {
     var vm = this;
 
     var PAGE = 1;
@@ -21,6 +21,7 @@
     vm.loadMore = loadMore;
     vm.changeFilter = changeFilter;
     vm.changeTag = changeTag;
+    vm.viewJobDetail = viewJobDetail;
 
     function loadMore (e) {
       e.preventDefault();
@@ -71,6 +72,12 @@
 
       loadJobs();
       vm.jobs = [];
+    }
+
+    function viewJobDetail (id) {
+      if (!id) return;
+
+      $state.go('jobs-detail', {id: id})
     }
 
     loadJobs();

@@ -1,3 +1,13 @@
 <div class="container">
-  <h1>Jobs</h1>
+  <header>
+    <h1>{{ vm.job.name }}</h1>
+    <span class="createdAt">{{ vm.job.createdAt | date }}</span>
+    <h2>{{ vm.job._company.name }}</h2>
+    <h3>{{ vm.job.location }} <span ng-if="vm.job.remote">| Remove OK</span></h3>
+
+    <p><a ng-href="{{vm.job._company.website}}" target="_blank">{{ vm.job._company.website }}</a></p>
+  </header>
+
+  {{ vm.job.description }}
+
 </div>

@@ -8,6 +8,7 @@ label{
 }
 
 .default-list{
+  display: inline-block;
   padding: 0;
   list-style: none;
 }
@@ -113,9 +114,14 @@ label{
 }
 
 .jobs-list > ul > li{
-  padding: 20px 0;
+  padding: 20px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.jobs-list > ul > li:hover {
+  background-color: #eee;
 }
 
 .jobs-list > ul > li:first-child{
