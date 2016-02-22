@@ -13,9 +13,27 @@
     </div>
     <div class="col-sm-9 filter-list">
       <ul>
-        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Emprego</label></li>
-        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Estágio</label></li>
-        <li class="col-sm-3 item"><input type="checkbox" name="job" id="job"> <label for="job">Freela</label></li>
+        <li class="col-sm-3 item">
+          <input type="checkbox" name="fullTime" id="fullTime" ng-click="vm.changeFilter('Full Time')"> <label for="fullTime">Full Time</label>
+        </li>
+        <li class="col-sm-3 item">
+          <input type="checkbox" name="estagio" id="estagio" ng-click="vm.changeFilter('Estágio')"> <label for="estagio">Estágio</label>
+        </li>
+        <li class="col-sm-3 item">
+          <input type="checkbox" name="freela" id="freela" ng-click="vm.changeFilter('Freela')"> <label for="freela">Freela</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="custom-filters">
+  <div class="container">
+    <div class="col-sm-9 active-filters">
+      <ul class="default-list">
+        <li class="tag" ng-repeat="tag in vm.tags">
+          <a href="#" ng-click="vm.changeTag($event, tag)">{{tag}}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -33,28 +51,30 @@
 
     <div class="jobs-list">
      <ul>
-        <li class="col-xs-12 item" ng-repeat="job in vm.jobs track by job._id">
+        <li
+        class="col-xs-12 item"
+        ng-repeat="job in vm.jobs track by job._id">
 
           <div class="col-sm-1 hidden-xs logo">
-            <img src="http://placehold.it/100" alt="{{job.name}}" ng-if="job.company.companyLogo">
-            <p ng-if="!job.company.companyLogo">T</p>
+            <img src="http://placehold.it/100" alt="{{job.name}}" ng-if="job._company.companyLogo">
+            <p ng-if="!job._company.companyLogo">T</p>
           </div>
 
           <div class="col-sm-4 col-xs-7 info">
             <h4>{{job.name}}</h4>
-            {{job.company.name || 'Company Name'}}
+            {{job._company.name}}
           </div>
 
           <div class="col-sm-4 hidden-xs tags">
             <ul class="default-list tag-list">
               <li class="tag" ng-repeat="tag in job.tags">
-                <a href="#">{{tag}}</a>
+                <a href="#" ng-click="vm.changeTag($event, tag)">{{tag}}</a>
               </li>
             </ul>
           </div>
 
           <div class="col-sm-2 col-xs-3 place">
-            <h4>Emprego</h4>
+            <h4>{{job.type | uppercase }}</h4>
             <span class="glyphicon glyphicon-globe"></span> {{job.location}}
           </div>
 
@@ -68,7 +88,7 @@
 
     <div class="clearfix"></div>
 
-    <a href="#" class="btn btn-primary" ng-click="vm.loadMore($event)" ng-disabled="!vm.amount || vm.amount <= vm.jobs.length">Load more</a>
+    <a href="#" class="btn btn-primary" ng-click="vm.loadMore($event)" ng-disabled="!vm.total || vm.total <= vm.jobs.length">Load more</a>
 
   </div>
 </section>
