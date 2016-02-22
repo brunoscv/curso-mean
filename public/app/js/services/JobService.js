@@ -2,10 +2,10 @@
   angular.module('jobs')
     .factory('JobService', JobService);
 
-  JobService.$inject = ['$resource'];
+  JobService.$inject = ['appSettings', '$resource'];
 
-  function JobService ($resource) {
-    return $resource('/api/jobs/:_id', { _id: '@_id'});
+  function JobService (appSettings, $resource) {
+    return $resource(appSettings.apiUrl + 'jobs/:_id', { _id: '@_id'});
   }
 
 })();

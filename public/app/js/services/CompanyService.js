@@ -2,10 +2,10 @@
   angular.module('jobs')
     .factory('CompanyService', CompanyService);
 
-  CompanyService.$inject = ['$resource'];
+  CompanyService.$inject = ['appSettings', '$resource'];
 
-  function CompanyService ($resource) {
-    return $resource('/api/companies/:_id', { _id: '@_id'});
+  function CompanyService (appSettings, $resource) {
+    return $resource(appSettings.apiUrl + 'companies/:_id', { _id: '@_id'});
   }
 
 })();

@@ -20,6 +20,7 @@ gulp.task('js', function() {
     source.npm + '/angular-ui-router/release/angular-ui-router.min.js',
     source.npm + '/angular-resource/angular-resource.min.js',
     source.js + '/app.js',
+    source.js + '/config.js',
     source.js + '/routes.js',
     source.js + '/**/*.js'
     ])
