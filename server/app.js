@@ -7,7 +7,7 @@ let app = express();
 
 global.Promise = require('bluebird');
 
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 app.use('/', require('./routes'));
 
