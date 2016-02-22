@@ -27,16 +27,26 @@ let JobController = {
   list: function(request, response, next) {
     let size = parseInt(request.query.size, 10) || PAGE_SIZE;
     let page = parseInt(request.query.page, 10) || FIRST_PAGE;
+    let query = request.query;
+    let filters = {};
     let result = {
       _metadata: {}
     };
+
+    if (query.types) {
+      filters.type = { $in: query.types.split(',') };
+    }
+
+    if (query.tags) {
+      filters.tags = { $in: query.tags.split(',') };
+    }
 
     JobModel.count()
       .then(function(total) {
         result._metadata.total = total;
 
         return JobModel
-          .find()
+          .find(filters)
           .limit(size)
           .populate('_company')
           .skip((page - 1) * size)
