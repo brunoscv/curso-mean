@@ -24,6 +24,14 @@ let JobController = {
       .catch(next);
   },
 
+  tags: function(request, response, next) {
+    JobModel.find().distinct('tags')
+      .then(function(data) {
+        response.json(data.sort());
+      })
+      .catch(next);
+  },
+
   list: function(request, response, next) {
     let size = parseInt(request.query.size, 10) || PAGE_SIZE;
     let page = parseInt(request.query.page, 10) || FIRST_PAGE;
