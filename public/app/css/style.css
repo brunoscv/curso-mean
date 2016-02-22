@@ -150,23 +150,21 @@ label{
 }
 
 .jobs-list .tag-list .tag {
+  display: inline-block;
+  padding: 5px;
+  margin: 3px;
+  color: #0F1B38;
+  text-transform: uppercase;
   border: 2px solid #0F1B38;
   border-radius: 0.2em;
-  display: table;
-  padding: 0.33em;
-  margin: 0.2em;
-  display: inline-block;
-  text-transform: uppercase;
   font-weight: 600;
-  vertical-align: middle;
-  color: #0F1B38;
 }
 
 .jobs-list .tag-list a {
   color: inherit;
   line-height: 1;
   font-size: 0.7em;
-  font-weight: 700;
+  text-decoration: none;
 }
 
 .jobs-list .info h4{
