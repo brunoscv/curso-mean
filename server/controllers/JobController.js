@@ -9,6 +9,7 @@ const FIRST_PAGE = 1;
 let JobController = {
   byId: function(request, response, next) {
     JobModel.findOne({ _id: request.params._id })
+      .populate('_company')
       .then(function(data) {
         if (!data) {
           var err = new Error('Job Not found ;(');
@@ -37,6 +38,7 @@ let JobController = {
         return JobModel
           .find()
           .limit(size)
+          .populate('_company')
           .skip((page - 1) * size)
       })
       .then(function(data) {
