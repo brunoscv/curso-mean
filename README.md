@@ -4,11 +4,11 @@
 [@rafaell-lycan](@rafaell-lycan)
 
 
-## seed
+## Seed
 
 * [jobs](./seed/jobs.json)
 * [companies](./seed/companies.json)
 ```
-db.jobs.insert([{...}])
-db.companies.insert([{...}])
+mongoimport --host 127.0.0.1 --drop --db curso-mean --collection jobs --file server/seed/jobs.json
+mongoimport --host 127.0.0.1 --drop --db curso-mean --collection companies --file server/seed/companies.json
 ```
