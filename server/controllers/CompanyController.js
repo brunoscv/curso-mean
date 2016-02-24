@@ -24,8 +24,8 @@ let CompanyController = {
   },
 
   list: function(request, response, next) {
-    let size = request.query.size || PAGE_SIZE;
-    let page = request.query.page || FIRST_PAGE;
+    let size = parseInt(request.query.size, 10) || PAGE_SIZE;
+    let page = parseInt(request.query.page, 10) || FIRST_PAGE;
     let result = {
       _metadata: {}
     };
