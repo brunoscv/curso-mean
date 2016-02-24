@@ -34,7 +34,7 @@ app.use(function(request, response, next) {
 });
 
 app.use(function(err, request, response, next) {
-  response.json({ err: err.message });
+  response.status(err.status || 500).json({ err: err.message });
   debug(err.stack);
 });
 

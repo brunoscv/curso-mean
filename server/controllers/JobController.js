@@ -70,7 +70,10 @@ let JobController = {
       .catch(next);
   },
   create: function(request, response, next) {
-    JobModel.create(request.body)
+    let body = request.body;
+    body._company = request.companyId;
+
+    JobModel.create(body)
       .then(function(data) {
         response.json(data);
       })

@@ -18,7 +18,9 @@ let AuthController = {
       return next(err);
     }
 
-    CompanyModel.findAsync({ email, password })
+    debug('query', { email, password });
+
+    CompanyModel.findOneAsync({ email, password })
       .then(function(data) {
         if (!data) {
           let err = new Error('Invalid e-mail or password');
@@ -27,10 +29,15 @@ let AuthController = {
         }
 
         let expires = moment().add(15, 'minutes').valueOf();
-        let token = jwt.encode({
+        let payload = {
+          companyId: data._id,
           email: email,
           exp: expires
-        }, config.get('jwtTokenSecret'));
+        };
+
+        debug('payload', payload);
+
+        let token = jwt.encode(payload, config.get('jwtTokenSecret'));
 
         response.json({ token });
       })
@@ -38,7 +45,7 @@ let AuthController = {
   },
 
   logout: function(request, response, next) {
-
+    response.status(204).send('');
   },
 
   ensureAuthenticated: function(request, response, next) {
@@ -56,8 +63,9 @@ let AuthController = {
           err.status = 401;
           return next(err);
       } else {
-          request.user = decoded.user;
-          debug(request.user);
+          request.companyId = decoded.companyId;
+          request.email = decoded.email;
+          debug(request.companyId, request.email);
           next();
       }
     } catch(err) {
