@@ -91,9 +91,26 @@ let JobController = {
       .catch(next);
   },
   listByCompany: function(request, response, next) {
-    JobModel.find({ _companyId: request.params._id })
-      .then(function(data) {
-        response.json(data);
+    let size = parseInt(request.query.size, 10) || PAGE_SIZE;
+    let page = parseInt(request.query.page, 10) || FIRST_PAGE;
+    let filter = { _company: request.params._id };
+    let result = {
+      _metadata: {}
+    };
+
+    JobModel.count(filter)
+      .then(function(total) {
+        result._metadata.total = total;
+
+        return JobModel.find(filter)
+          .then(function(data) {
+            result._metadata.size = size;
+            result._metadata.page = page;
+            result._metadata.count = data.length;
+            result.items = data;
+
+            response.json(result);
+          });
       })
       .catch(next);
   }
