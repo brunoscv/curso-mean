@@ -52,14 +52,14 @@
         ng-repeat="job in vm.jobs track by job._id"
         ng-click="vm.viewJobDetail(job._id)">
 
-          <div class="col-sm-1 hidden-xs logo">
+          <div class="col-sm-1 hidden-xs company-logo">
             <img ng-src="{{job._company.companyLogo}}" alt="{{job.name}}" ng-if="job._company.companyLogo">
             <p ng-if="!job._company.companyLogo">O</p>
           </div>
 
           <div class="col-sm-4 col-xs-7 info">
             <h4>{{job.name}}</h4>
-            {{job._company.name}}
+            <a ui-sref="company-detail({ id: job._company._id })">{{job._company.name}}</a>
           </div>
 
           <div class="col-sm-4 hidden-xs tags">
