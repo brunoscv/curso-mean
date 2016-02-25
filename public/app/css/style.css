@@ -139,31 +139,9 @@ label{
   border-top: 1px solid #ddd;
 }
 
-.jobs-list .logo {
+.jobs-list .company-logo {
   width: 3.5em;
   height: 3.5em;
-  padding: 0;
-  margin: 0.5em 0;
-  display: inline-block;
-  vertical-align: middle;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  border-radius: 3px;
-}
-
-.jobs-list .logo p {
-  color: #dad6d2;
-  font-weight: 600;
-  font-size: 1.5em;
-  margin: 0;
-  text-align: center;
-  line-height: 2em;
-  vertical-align: middle;
-}
-
-.jobs-list .logo img{
-  width: 100%;
-  display: block;
 }
 
 .jobs-list .info h4{
@@ -178,6 +156,34 @@ label{
   text-transform: uppercase;
 }
 
+/* Company Logo */
+.company-logo {
+  width: 5em;
+  height: 5em;
+  padding: 0;
+  margin: 0.5em 0;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+}
+
+.company-logo p {
+  color: #dad6d2;
+  font-weight: 600;
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.company-logo img{
+  width: 100%;
+  display: block;
+}
+
 /* TAG LIST */
 .tag-list .tag {
   display: inline-block;
@@ -185,7 +191,7 @@ label{
   font-weight: 600;
 }
 
-.tag-list a {
+.tag-list a, .tag-list span {
   padding: 5px;
   margin: 3px;
   font-size: 0.75em;
@@ -195,7 +201,7 @@ label{
   border-radius: 0.2em;
 }
 
-.tag-list .tag a:hover {
+.tag-list .tag a:hover, .tag-list span {
   background-color: #0F1B38;
   color: #fff;
 }
