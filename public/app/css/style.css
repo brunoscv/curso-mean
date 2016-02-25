@@ -3,10 +3,6 @@ body{
   color: #555;
 }
 
-label{
-  font-weight: normal;
-}
-
 .default-list{
   display: inline-block;
   padding: 0;
@@ -41,6 +37,23 @@ label{
   margin-top: 40px;
   padding: 20px 0;
   border-top: 1px solid #ddd;
+}
+
+/* FORM */
+form {
+  margin-top: 40px;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.form-control {
+  border: 2px solid #DDE1EA;
+  border-radius: 3px;
+  box-shadow: none;
+  padding: 15px 10px;
+  height: 50px;
 }
 
 /* HOME */

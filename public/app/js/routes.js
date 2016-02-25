@@ -62,14 +62,14 @@
       .state('login', {
         url: '/login',
         templateUrl: 'app/partials/login.html',
-        controller: 'LoginController',
-        controllerAs: 'vm'
+        // controller: 'LoginController',
+        // controllerAs: 'vm'
       })
       .state('create-company', {
         url: '/create-company',
         templateUrl: 'app/partials/create-company.html',
-        controller: 'CreateCompanyController',
-        controllerAs: 'vm'
+        // controller: 'CreateCompanyController',
+        // controllerAs: 'vm'
       });
   }
 })();
