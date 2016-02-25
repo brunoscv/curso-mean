@@ -31,10 +31,16 @@ label{
 }
 
 .header{
-  padding: 40px;
+  padding: 20px;
   background: #4a99e2;
   background: linear-gradient(45deg,#54c1f4 0%,#28a7db 50%,#4a99e2 100%);
   color: #fff;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
 }
 
 /* HOME */

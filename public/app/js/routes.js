@@ -10,21 +10,48 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/partials/home.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
+        views : {
+          '' : {
+            templateUrl: 'app/partials/home.html',
+            controller: 'HomeController',
+            controllerAs: 'vm'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        }
       })
       .state('jobs-detail', {
         url: '/jobs/:id',
-        templateUrl: 'app/partials/job-description.html',
-        controller: 'JobsController',
-        controllerAs: 'vm'
+        views: {
+          '' : {
+            templateUrl: 'app/partials/job-description.html',
+            controller: 'JobsController',
+            controllerAs: 'vm'
+          },
+          'header' : {
+            templateUrl: 'app/partials/header.html'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        }
       })
       .state('company-detail', {
         url: '/companies/:id',
-        templateUrl: 'app/partials/company-description.html',
-        controller: 'CompaniesController',
-        controllerAs: 'vm'
+        views: {
+          '' : {
+            templateUrl: 'app/partials/company-description.html',
+            controller: 'CompaniesController',
+            controllerAs: 'vm'
+          },
+          'header' : {
+            templateUrl: 'app/partials/header.html'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        }
       })
       .state('post-job', {
         url: '/post-job',
