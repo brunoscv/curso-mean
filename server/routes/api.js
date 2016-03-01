@@ -3,7 +3,10 @@
 let router = require('express').Router();
 
 router.get('/', function(request, response, next) {
-  response.send('PONG');
+  response.json({
+  	error: false,
+  	message: "Job Search API"
+  });
 });
 
 router.use('/companies', require('./companies'));
