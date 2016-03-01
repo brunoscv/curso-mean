@@ -6,21 +6,23 @@
   </header>
 
   <div class="col-md-6">
-    <form>
+    <form name="creaeteCompany">
       <div class="form-group has-error">
-        <label for="companyName">Company Name</label>
-        <input type="text" class="form-control" id="companyName">
+        <label for="companyName">Company Name *</label>
+        <input type="text" class="form-control" id="companyName" ng-model="vm.company.name" required>
 
-        <div class="alert alert-error help-block">Lorem ipsum dolor sit amet.</div>
+        <div class="alert alert-error help-block" ng-messages="creaeteCompany.companyName.$error">
+          <span ng-message="required">Lorem ipsum dolor sit amet.</span>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="companyLogo">Company Logo (url)</label>
-        <input type="text" class="form-control" id="companyLogo">
+        <input type="text" class="form-control" id="companyLogo" ng-model="vm.company.companyLogo">
       </div>
       <div class="form-group">
         <label for="companyWebsite">Company homepage</label>
-        <input type="url" class="form-control" id="companyWebsite">
+        <input type="url" class="form-control" id="companyWebsite" ng-model="vm.company.website">
       </div>
 
       <hr>
@@ -28,12 +30,12 @@
       <p>Your credentials information:</p>
 
       <div class="form-group">
-        <label for="companyMail">Email</label>
-        <input type="email" class="form-control" id="companyMail" placeholder="your@mail.com">
+        <label for="companyMail">Email *</label>
+        <input type="email" class="form-control" id="companyMail" placeholder="your@mail.com" ng-model="vm.company.email" required>
       </div>
       <div class="form-group">
-        <label for="companyPassword">Password</label>
-        <input type="password" class="form-control" id="companyPassword" placeholder="Your password">
+        <label for="companyPassword">Password *</label>
+        <input type="password" class="form-control" id="companyPassword" placeholder="Your password" ng-model="vm.company.password" required>
       </div>
       <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
