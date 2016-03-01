@@ -13,11 +13,11 @@ module.exports = db;
  * private
  */
 function _connection() {
-  var username = config.get('mongo.username'),
-      password = config.get('mongo.password'),
-      host     = config.get('mongo.host'),
-      port     = config.get('mongo.port'),
-      database = config.get('mongo.database'),
+  var username = process.env.MONGO_USERNAME || config.get('mongo.username'),
+      password = process.env.MONGO_PASSWORD || config.get('mongo.password'),
+      host     = process.env.MONGO_SERVER 	|| config.get('mongo.host'),
+      port     = process.env.MONGO_PORT 	|| config.get('mongo.port'),
+      database = process.env.MONGO_DATABASE || config.get('mongo.database'),
 
       auth = username ? username + ':' + password + '@' : '';
 

@@ -9,6 +9,8 @@ let app = express();
 
 global.Promise = require('bluebird');
 
+// Grab environment port or define 3000 by default
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
