@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "gulp; gulp watch &",
-    "start": "export DEBUG=curso-mean:* && node ./server/bin/www",
-    "dev": "export DEBUG=curso-mean:* && node ./server/bin/www",
+    "start": "node ./server/bin/www",
+    "dev": "export DEBUG=curso-mean:* && nodemon ./server/bin/www",
+    "build": "gulp && gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
