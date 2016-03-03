@@ -22,6 +22,7 @@ gulp.task('js', function() {
     source.js + '/app.js',
     source.js + '/config.js',
     source.js + '/routes.js',
+    source.js + '/app.run.js',
     source.js + '/**/*.js'
     ])
     .pipe(concat('app.min.js'))

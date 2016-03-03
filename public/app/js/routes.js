@@ -57,19 +57,30 @@
         url: '/post-job',
         templateUrl: 'app/partials/post-job.html',
         controller: 'PostJobController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        authorization : true
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'app/partials/login.html',
-        // controller: 'LoginController',
-        // controllerAs: 'vm'
+        views: {
+          '' : {
+            templateUrl: 'app/partials/login.html',
+            // controller: 'JobsController',
+            // controllerAs: 'vm'
+          },
+          'header' : {
+            templateUrl: 'app/partials/header.html'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        }
       })
       .state('create-company', {
         url: '/create-company',
         templateUrl: 'app/partials/create-company.html',
-        // controller: 'CreateCompanyController',
-        // controllerAs: 'vm'
+        controller: 'CreateCompanyController',
+        controllerAs: 'vm'
       });
   }
 })();
