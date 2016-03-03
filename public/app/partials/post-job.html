@@ -6,37 +6,44 @@
   </header>
 
   <div class="col-md-6">
-    <form>
+    <form name="postJob" novalidate ng-submit="vm.submitJob()">
       <div class="form-group has-error">
-        <label for="jobTitle">Job Title</label>
-        <input type="text" class="form-control" id="jobTitle">
+        <label for="jobTitle">Job Title*</label>
+        <input type="text" class="form-control" id="jobTitle" name="jobTitle" ng-model="vm.job.name" required>
 
         <div class="alert alert-error help-block">Lorem ipsum dolor sit amet.</div>
       </div>
 
       <div class="form-group">
         <label for="jobLocation">Location</label>
-        <input type="text" class="form-control" id="jobLocation">
+        <input type="text" class="form-control" id="jobLocation" name="jobLocation" ng-model="vm.job.localtion">
       </div>
 
       <div class="checkbox">
         <label>
-          <input type="checkbox" value="on" class="checkbox">
+          <input type="checkbox" value="on" class="checkbox" ng-model="vm.job.remote">
           <strong>Remote ok?</strong>
         </label>
       </div>
 
       <div class="form-group">
-        <label for="jobDescription">Job description</label>
-        <textarea class="form-control" id="jobDescription" cols="30" rows="10"></textarea>
+        <label for="jobType">Type*</label>
+        <select type="text" class="form-control" id="jobType" name="jobType" ng-model="vm.job.type" ng-options="type for type in vm.jobTypes" required>
+          
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="jobDescription">Job description*</label>
+        <textarea class="form-control" id="jobDescription" name="jobDescription" ng-model="vm.job.description" cols="30" rows="10" required></textarea>
       </div>
 
       <div class="form-group">
         <label for="tags">Tags</label>
         <p><strong>Comma separated list, like:</strong> javascript, ios, swift, aws, marketing</p>
-        <input type="text" class="form-control" id="tags">
+        <input type="text" class="form-control" id="tags" name="tags" ng-model="vm.job.tags">
       </div>
-      <button type="submit" class="btn btn-primary">Sign up</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="postJob.$invalid">Post a Job</button>
     </form>
   </div>
 
