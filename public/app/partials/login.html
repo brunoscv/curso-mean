@@ -6,19 +6,19 @@
   </header>
 
   <div class="col-md-4 col-md-offset-4">
-    <form>
+    <form name="loginForm" novalidate ng-submit="vm.loginAction()">
       <div class="form-group">
         <label for="companyMail">Email</label>
-        <input type="email" class="form-control" id="companyMail" placeholder="your@mail.com">
+        <input type="email" class="form-control" id="companyMail" ng-model="vm.login.email" placeholder="your@mail.com">
       </div>
       <div class="form-group">
         <label for="companyPassword">Password</label>
-        <input type="password" class="form-control" id="companyPassword" placeholder="Your password">
+        <input type="password" class="form-control" id="companyPassword" ng-model="vm.login.password" placeholder="Your password">
       </div>
       <button type="submit" class="btn btn-primary btn-block">Log in</button>
       <hr>
       <p class="text-center">OR</p>
-      <button type="submit" class="btn btn-success btn-block">Sign up</button>
+      <a ui-sref="create-company" class="btn btn-success btn-block">Sign up</a>
     </form>
   </div>
 

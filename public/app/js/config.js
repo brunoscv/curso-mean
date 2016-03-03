@@ -1,6 +1,7 @@
 (function  () {
   angular.module('jobs')
     .constant('appSettings', {
-      apiUrl : '/api/'
+      apiUrl : '/api/',
+      authUrl : '/auth/',
     });
 })();
