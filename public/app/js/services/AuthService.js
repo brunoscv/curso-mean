@@ -2,19 +2,16 @@
   angular.module('jobs')
     .factory('AuthService', AuthService);
 
-  AuthService.$inject = ['appSettings', '$http', '$q', '$timeout', '$state', '$location'];
+  AuthService.$inject = ['appSettings', '$http', '$q', '$timeout', '$state', '$location', 'TokenHandler'];
 
-  function AuthService (appSettings, $http, $q, $timeout, $state, $location) {
-
-  	var _token = null;
+  function AuthService (appSettings, $http, $q, $timeout, $state, $location, TokenHandler) {
 
   	function login(credentials) {
   		var defeered = $q.defer();
 
   		$http.post(appSettings.authUrl + 'login', credentials)
   			.then(function (response) {
-  				_token = response.data.token;
-
+  				TokenHandler.set(response.data.token);
   				defeered.resolve();
   			})
   			.catch(defeered.reject);
@@ -23,7 +20,7 @@
   	}
 
   	function isAuthenticated() {
-      return _token;
+      return TokenHandler.get();
     }
 
     function authorize(url) {
