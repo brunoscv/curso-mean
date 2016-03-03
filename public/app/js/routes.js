@@ -55,9 +55,19 @@
       })
       .state('post-job', {
         url: '/post-job',
-        templateUrl: 'app/partials/post-job.html',
-        controller: 'PostJobController',
-        controllerAs: 'vm',
+        views: {
+          '' : {
+            templateUrl: 'app/partials/post-job.html',
+            controller: 'PostJobController',
+            controllerAs: 'vm',
+          },
+          'header' : {
+            templateUrl: 'app/partials/header.html'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        },
         authorization : true
       })
       .state('login', {
@@ -65,8 +75,8 @@
         views: {
           '' : {
             templateUrl: 'app/partials/login.html',
-            // controller: 'JobsController',
-            // controllerAs: 'vm'
+            controller: 'LoginController',
+            controllerAs: 'vm'
           },
           'header' : {
             templateUrl: 'app/partials/header.html'
@@ -78,9 +88,19 @@
       })
       .state('create-company', {
         url: '/create-company',
-        templateUrl: 'app/partials/create-company.html',
-        controller: 'CreateCompanyController',
-        controllerAs: 'vm'
+        views: {
+          '' : {
+            templateUrl: 'app/partials/create-company.html',
+            controller: 'CreateCompanyController',
+            controllerAs: 'vm'
+          },
+          'header' : {
+            templateUrl: 'app/partials/header.html'
+          },
+          'footer' : {
+            templateUrl: 'app/partials/footer.html'
+          }
+        }
       });
   }
 })();
