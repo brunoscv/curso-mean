@@ -16,7 +16,8 @@
         if(!response || response.err) return redirect();
 
         vm.job = response;
-      });
+      })
+      .catch(redirect);
 
     function redirect () {
       $state.go('home');
