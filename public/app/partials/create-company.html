@@ -6,38 +6,46 @@
   </header>
 
   <div class="col-md-6">
-    <form name="creaeteCompany">
-      <div class="form-group has-error">
+    <form name="createCompany" ng-submit="vm.submitCompany()" novalidate>
+      <div class="form-group" ng-class="{'has-error' : createCompany.companyName.$invalid && !createCompany.companyName.$pristine}">
         <label for="companyName">Company Name *</label>
-        <input type="text" class="form-control" id="companyName" ng-model="vm.company.name" required>
+        <input type="text" class="form-control" name="companyName" ng-model="vm.company.name" required>
 
-        <div class="alert alert-error help-block" ng-messages="creaeteCompany.companyName.$error">
-          <span ng-message="required">Lorem ipsum dolor sit amet.</span>
+        <div class="alert alert-error help-block" ng-show="createCompany.companyName.$invalid && !createCompany.companyName.$pristine" ng-messages="creaeteCompany.companyName.$error">
+          <span ng-message="required">Company name is required</span>
         </div>
       </div>
 
       <div class="form-group">
         <label for="companyLogo">Company Logo (url)</label>
-        <input type="text" class="form-control" id="companyLogo" ng-model="vm.company.companyLogo">
+        <input type="text" class="form-control" name="companyLogo" ng-model="vm.company.companyLogo">
       </div>
       <div class="form-group">
         <label for="companyWebsite">Company homepage</label>
-        <input type="url" class="form-control" id="companyWebsite" ng-model="vm.company.website">
+        <input type="url" class="form-control" name="companyWebsite" ng-model="vm.company.website">
       </div>
 
       <hr>
 
       <p>Your credentials information:</p>
 
-      <div class="form-group">
+      <div class="form-group" ng-class="{'has-error' : createCompany.companyMail.$invalid && !createCompany.companyMail.$pristine}">
         <label for="companyMail">Email *</label>
-        <input type="email" class="form-control" id="companyMail" placeholder="your@mail.com" ng-model="vm.company.email" required>
+        <input type="email" class="form-control" name="companyMail" placeholder="your@mail.com" ng-model="vm.company.email" required>
+
+        <div class="alert alert-error help-block" ng-show="createCompany.companyMail.$invalid && !createCompany.companyMail.$pristine" ng-messages="creaeteCompany.companyMail.$error">
+          <span ng-message="required">Email is required</span>
+        </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" ng-class="{'has-error' : createCompany.companyPassword.$invalid && !createCompany.companyPassword.$pristine}">
         <label for="companyPassword">Password *</label>
-        <input type="password" class="form-control" id="companyPassword" placeholder="Your password" ng-model="vm.company.password" required>
+        <input type="password" class="form-control" name="companyPassword" placeholder="Your password" ng-model="vm.company.password" required>
+
+        <div class="alert alert-error help-block" ng-show="createCompany.companyPassword.$invalid && !createCompany.companyPassword.$pristine" ng-messages="creaeteCompany.companyPassword.$error" >
+          <span ng-message="required">Password is required</span>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Sign up</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="createCompany.$invalid">Sign up</button>
     </form>
   </div>
 

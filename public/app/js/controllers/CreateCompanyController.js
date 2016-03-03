@@ -15,11 +15,9 @@
       password : null
     };
 
-    // CompanyService.get({_id : $state.params.id}).$promise
-    //   .then(function  (response) {
-    //     if(!response || response.err) return redirect();
-
-    //     vm.job = response;
-    //   });
+    vm.submitCompany = function () {
+      CompanyService.save(vm.company);
+    }
+    
   }
 })();
